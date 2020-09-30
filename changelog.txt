@@ -1,5 +1,8 @@
 *** Changelog ***
 
+= 4.5.3 - 2020-xx-xx =
+* Tweak - Add site_url to all transactions, not just recurring ones.
+
 = 4.5.2 - 2020-08-19 =
 * Fix - Allow extension to attempt to run in all countries, not just officially supported ones
 
