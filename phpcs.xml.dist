@@ -14,12 +14,12 @@
 	<config name="testVersion" value="5.6-" />
 
 	<!-- Rules -->
-	<rule ref="WooCommerce-Core" >
-		<exclude name="Generic.Commenting.Todo.TaskFound"/>
+	<!-- <rule ref="WooCommerce-Core" > -->
+		<!-- <exclude name="Generic.Commenting.Todo.TaskFound"/> -->
 
 		<!-- This rule is currently generating some false positives, it would be worth retrying after PHPCS upgrades -->
-		<exclude name="Squiz.Commenting.FunctionCommentThrowTag.WrongNumber"/>
-	</rule>
+		<!-- <exclude name="Squiz.Commenting.FunctionCommentThrowTag.WrongNumber"/> -->
+	<!-- </rule> -->
 
 	<rule ref="WordPress.WP.I18n">
 		<properties>
@@ -33,9 +33,9 @@
 		</properties>
 	</rule>
 
-	<rule ref="PHPCompatibility">
-		<exclude-pattern>tests/</exclude-pattern>
-	</rule>
+	<!-- <rule ref="PHPCompatibility"> -->
+		<!-- <exclude-pattern>tests/</exclude-pattern> -->
+	<!-- </rule> -->
 
 	<rule ref="WordPress.Files.FileName.InvalidClassFileName">
 		<exclude-pattern>tests/*</exclude-pattern>
