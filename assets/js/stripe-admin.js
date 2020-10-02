@@ -17,20 +17,6 @@ jQuery( function( $ ) {
 			}
 		},
 
-		connect: function() {
-			$.ajax( {
-				data:    { nonce: woocommerce_stripe_admin.wc_stripe_admin_nonce },
-				method:  'POST',
-				url:     woocommerce_stripe_admin.ajax_url,
-			} ).done( function( response ) {
-				if ( response.success ) {
-					window.location.href = response.data;
-				} else {
-					$( '#mainform h2' ).prepend( '<div class="notice notice-error"><p>' + response.data + '</p></div>' );
-				}
-			} );
-		},
-
 		/**
 		 * Initialize.
 		 */
@@ -99,16 +85,6 @@ jQuery( function( $ ) {
 						url: window.location.href + '&stripe_dismiss_3ds=' + $setting.data( 'nonce' ),
 					} );
 				} );
-			} );
-
-			// Add Stripe Connect oauth button if not connected.
-			var api_credential_text = $( '<p>' + woocommerce_stripe_admin.wc_stripe_api_button_text + '</p>' );
-
-			$( '#woocommerce_stripe_api_credentials' ).after( api_credential_text );
-			
-			$( '#woocommerce_stripe_api_credentials' ).siblings( 'p' ).find( '.button' ).on( 'click', function( e ) {
-				e.preventDefault();
-				wc_stripe_admin.connect();
 			} );
 		}
 	};
